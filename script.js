@@ -1,16 +1,24 @@
-let prevScrollPos = window.scrollY;
+document.addEventListener('DOMContentLoaded', function() {
+  let prevScrollPos = window.scrollY;
 
-window.addEventListener('scroll', function() {
-  const currentScrollPos = window.scrollY;
+  window.addEventListener('scroll', function() {
+    const currentScrollPos = window.scrollY;
 
-  if (prevScrollPos > currentScrollPos) {
-    document.querySelector('.navbar').classList.add('.nav-bar');
-  } else {
-    document.querySelector('.navbar').classList.remove('.nav-bar');
-  }
+    const navbar = document.querySelector('.navbar');
+    
+    if (navbar) { 
+      if (prevScrollPos > currentScrollPos) {
+        navbar.classList.add('nav-bar');
+      } else {
+        navbar.classList.remove('nav-bar');
+      }
+    }
 
-  prevScrollPos = currentScrollPos;
+    prevScrollPos = currentScrollPos;
+  });
 });
+
+
 
 
 const form = document.getElementById('form');
@@ -51,3 +59,13 @@ form.addEventListener('submit', function(e) {
             }, 3000);
         });
 });
+
+const sidemenu=document.getElementById("side-menu");
+
+function openmenu(){
+  sidemenu.style.right="0";
+}
+
+function closemenu(){
+  sidemenu.style.right="-180px";
+}

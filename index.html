@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>himaza_mifthah</title>
     <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
 <body>
 <!-- ------header---------- -->
@@ -12,13 +14,15 @@
         <div class="nav-bar">
             <nav>
                 <img src="./img/logo.png" alt="" class="logo-img">
-                <ul>
+                <ul id="side-menu">
                     <li><a href="#header">home</a></li>
                     <li><a href="#about">about</a></li>
                     <li><a href="#skills">skills</a></li>
                     <li><a href="#projects">projects</a></li>
                     <li><a href="#contact">contact</a></li>
+                    <img src="./img/icons8-multiply-30.png" alt="" class="fas" onclick="closemenu()">
                 </ul>
+                <img src="./img/icons8-menu-48.png" alt="" class="fas " onclick="openmenu()">
             </nav>
         </div>
             
@@ -44,7 +48,7 @@
             </div> 
             <div class="about-body">
                 <div class="about-body-img">
-                    <img src="./img/profile.jpg" alt="">
+                    <img src="./img/profile.jpg" alt="" class="about-img">
                 </div>
                 <div class="about-body-text"> 
                     <p>Nearing the completion of my High National Diploma in IT at SLIATE, I possess a versatile skill set covering HTML, CSS, JavaScript, Bootstrap, PHP, and Laravel. As a highly motivated web developer, I eagerly anticipate graduation and bring a passion for simplifying complexity into elegant solutions. My journey in web technologies has sharpened my ability to create beautiful, intuitive interface designs. Beyond code, I see challenges as opportunities to innovate and enhance user experiences. Equipped with skills and enthusiasm, I'm ready to contribute effectively to the dynamic world of web development.</p> 
@@ -60,6 +64,7 @@
             </div>
             <div class="skills-body">
                 <div class="skills-body-dev">
+                    
                     <div class="dev-con">
                         <img src="./img/icons8-html-144.png" alt="">
                         <div class="cover">
@@ -119,7 +124,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> 
 <!-- ------projects-------- -->
     <section id="projects">
         <div class="projects">
@@ -155,7 +160,57 @@
                     </div>
                 </div>
             </div>
+            <div id="carouselExample" class="carousel carousel-dark slide" data-bs-touch="true">
+            
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="carousel-projects-body-content ">
+                        <div class="carousel-projects-img">
+                            <img src="./img/bms.jpg" alt="">
+                        </div>
+                        <div class="carousel-projects-description">
+                            <h6>Blood management system</h6> 
+                        <p>
+                           <br> <span>Client and Location:</span> Mr. Hasan Firaz representing YMMA Welfare Society in Madawala Bazaar, Kandy. <br><br>
+                            <span>Project Focus:</span> Develop a web-based blood donation system for YMMA Welfare Society. <br><br>
+                            <span>Objective:</span> Create a platform connecting blood donors with recipients for quick and efficient blood donation coordination. <br><br>
+                            <span>Humanitarian Impact:</span> Aiming to save lives by providing a user-friendly tool for donors and recipients to connect, enhancing accessibility to blood donations.
+                        </p>
+                        </div>
+                    </div> 
+                  </div>
+                  <div class="carousel-item">
+                    <div class="carousel-projects-body-content">
+                        <div class="carousel-projects-img">
+                            <img src="./img/profportal.jpg" alt="">
+                        </div>
+                        <div class=" carousel-projects-description" >
+                            <h6>profPortal</h6>
+                            <p>
+                            <span>client and location:</span>SLIATE Kandy <br><br>
+                            <span>project focus:</span> develop a web-based lacture management system for SLIATE kandy <br><br>
+                            <span>Objective:</span> Develop a platform to connect visiting lecturers of SLIATE, facilitating the management of their timetables, logs, and vouchers.
+                            </p>
+                            </div>
+                        
+                    </div>
+                </div>
+                </div>
+                <button class="carousel-control-prev carousel-icon" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next carousel-icon" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  </div>
+              </div>
         </div>
+        
     </section>
 <!-- ------contact-------- -->
     <section id="contact">
@@ -164,15 +219,15 @@
                 <h1>contact</h1>
             </div>
             <div class="contact-body">
-                <form method="POST" id="form" class="conatct-body-container">
+                <form method="POST" id="form" class="conatct-body-container" name="contact-form">
                     <input type="hidden" name="access_key" value="6dfdb625-b262-4b2c-b246-6dec53fef9f6">
                     <input type="hidden" name="subject" value="New Submission from Web3Forms">
                     <input type="checkbox" name="botcheck" id="" style="display: none;">
-                    <input type="text" placeholder=" name" class="container-input" name="name" required>
-                    <input type="mail" placeholder=" email" class="container-input" name="email" required>
-                    <input type="text" placeholder="subject" class="container-input" name="subject" required>
-                    <textarea name="textarea" class="container-textarea" id=""  placeholder="Message" required></textarea>
-                    <button type="submit" class="btn">submit</button>
+                    <input type="text" placeholder=" name" class="container-input" name="name" required id="name" autocomplete="given-name">
+                    <input type="mail" placeholder=" email" class="container-input" name="email" required id="email" autocomplete="off">
+                    <input type="text" placeholder="subject" class="container-input" name="subject" required id="subject" autocomplete="off">
+                    <textarea name="textarea" class="container-textarea" id=""  placeholder="Message" required id="Message" autocomplete="off"></textarea>
+                    <button type="submit" class="con-btn">submit</button>
                     <div id="result"></div>
                 </form>    
                 <div class="contact-body-links">
